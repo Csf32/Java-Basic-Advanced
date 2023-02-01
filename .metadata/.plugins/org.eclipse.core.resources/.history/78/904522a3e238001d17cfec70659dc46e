@@ -1,0 +1,46 @@
+package application2;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities2.Departament;
+import entities2.Worked;
+import entities2enum.WorkedLevel;
+
+public class Composicao {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter departament's name");
+		String departamentName = sc.nextLine();
+		System.out.print("Enter worker data: ");
+		System.out.print("Name: ");
+		String workerdName = sc.nextLine();
+		System.out.print("Level: ");
+		String workedLevel = sc.nextLine();
+		
+		System.out.print("Base salary: ");
+		double baseSalary= sc.nextDouble();
+		
+		//Como o trabalhador depende de um departamento, é preciso instanciar, o deparmentName vai estar associado ao worked
+		Worked worked = new Worked(workerdName, WorkedLevel.valueOf(workedLevel), baseSalary, new Departament(departamentName));
+		
+		sc.close();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

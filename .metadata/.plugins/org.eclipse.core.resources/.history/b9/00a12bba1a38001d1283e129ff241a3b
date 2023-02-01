@@ -1,0 +1,10 @@
+package entities2;
+
+import entities2enum.WorkedLevel;
+
+public class Worked {
+	private String name;
+	private WorkedLevel level;
+	private Double baseSalary;
+	private Departament departament;
+}

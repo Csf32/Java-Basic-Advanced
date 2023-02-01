@@ -1,0 +1,93 @@
+package application2;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities2.Departament;
+import entities2.HoursContract;
+import entities2.Worked;
+import entities2enum.WorkedLevel;
+
+public class Composicao {
+
+	public static void main(String[] args) throws ParseException {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		//Quase a mesma coisa do DateTimeFormatter, a diferença é que não usa hora
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		
+		System.out.print("Enter departament's name");
+		String departamentName = sc.nextLine();
+		System.out.println("Enter worker data: ");
+		System.out.print("Name: ");
+		String workerdName = sc.nextLine();
+		System.out.print("Level: ");
+		String workedLevel = sc.nextLine();
+		
+		System.out.print("Base salary: ");
+		double baseSalary= sc.nextDouble();
+		
+		//Como o trabalhador depende de um departamento, é preciso instanciar e o deparmentName vai estar associado ao worked
+		Worked worked = new Worked(workerdName, WorkedLevel.valueOf(workedLevel), baseSalary, new Departament(departamentName));
+		
+		System.out.print("How many contracts to this worker?");
+		int manyContracts = sc.nextInt();
+		
+		for(int i =1; i<=manyContracts; i++) {
+			System.out.println("Enter contract #" + i + " data: ");
+			System.out.println("Date (DD/MM/YYYY");
+			Date contractDate = sdf.parse(sc.next());
+			System.out.print("Value per hour:");
+			double valuePerHour = sc.nextDouble();
+			System.out.println("Duration (hours): ");
+			
+			int hours = sc.nextInt();
+			HoursContract contract = new HoursContract(contractDate, valuePerHour, hours);
+			//Adicionar os dados do contrato instânciados acima dos trbalhadores na função que vai conter o parâmetros acima
+			worked.addContract(contract);
+		
+		}
+		
+		System.out.println();
+		System.out.print("Enter month and year to calculate income (MM/YYYY): ");
+		
+		//Leitura mês e ano no string e recortar manualmente
+		
+		String monthAndYear = sc.next();
+		
+		//Método substring = Pega os dois caracteres de mês e guarda como tal, fazendo o mesmo para o ano
+		
+			// (início da posição, fim de recorte da string)
+			// O Interger.parse é utilizado para converter para inteiro
+		int month = Integer.parseInt(monthAndYear.substring(0, 2)); 
+		
+		//Recorta da posição 3 em diante do (MM/YYYY)
+		int year = Integer.parseInt(monthAndYear.substring(3));
+		
+		System.out.println("Name: " + worked.getName());
+		
+		/*worked.getDepartament().getName() é uma composição de objeto, pois
+		está acessando o objeto no departamento e depois o nome*/
+		System.out.println("Department: " + worked.getDepartament().getName());
+		
+		System.out.println("Income for" + monthAndYear + ": " + String.format("%.2f", worked.income(year, month)));
+		sc.close();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

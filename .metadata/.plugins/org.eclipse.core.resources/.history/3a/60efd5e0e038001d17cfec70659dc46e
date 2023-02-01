@@ -1,0 +1,38 @@
+package application2;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Composicao {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter departament's name");
+		String deparmentName = sc.nextLine();
+		System.out.print("Enter worker data: ");
+		System.out.print("Name: ");
+		String workerName = sc.nextLine();
+		System.out.print("Base salary: ");
+		double baseSalary= sc.nextDouble();
+		
+		Worked worked = new Worker()
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

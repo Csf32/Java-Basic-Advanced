@@ -1,0 +1,9 @@
+package entitis.enums;
+
+public enum OderStatus {
+
+	PENDING_PAYMENT,
+	PROCESSING,
+	SHIPPED,
+	DEVILERED;
+}

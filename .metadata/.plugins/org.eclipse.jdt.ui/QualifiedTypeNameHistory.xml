@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="entitis.enums.OderStatus"/>
+    <fullyQualifiedTypeName name="entities.Order"/>
+    <fullyQualifiedTypeName name="entities.enums.OrderStatus"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="java.util.Locale"/>
+    <fullyQualifiedTypeName name="entities2.Departament"/>
+    <fullyQualifiedTypeName name="entities2.Worked"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="entities_ex2.Comment"/>
+    <fullyQualifiedTypeName name="entities_ex2.Post"/>
+    <fullyQualifiedTypeName name="java.text.ParseException"/>
+</qualifiedTypeNameHistroy>
